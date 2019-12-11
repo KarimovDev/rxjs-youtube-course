@@ -8,6 +8,7 @@ const rect = canvas.getBoundingClientRect();
 const scale = window.devicePixelRatio;
 const range = document.getElementById('range');
 const color = document.getElementById('color');
+const btnClear = document.getElementById('btnClear');
 
 canvas.width = rect.width * scale;
 canvas.height = rect.height * scale;
@@ -69,3 +70,4 @@ mouseMove$
         pairwise()
     );
 
+fromEvent(btnClear, 'click').subscribe(_ => ctx.clearRect(0, 0, canvas.width, canvas.height));
